@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #ffe6f0, #fff0f5);
+  font-family: 'Noto Serif Bengali', serif;
+  overflow: hidden;
+}
+
+.letter-box {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: 100px auto;
+  padding: 30px;
+  background: #ffffffd9;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(255, 105, 180, 0.3);
+  text-align: center;
+  color: #d63384;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+#letter {
+  font-size: 20px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  min-height: 150px;
+}
+
+.signature {
+  margin-top: 30px;
+  font-style: italic;
+}
+
+.heart-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  transform: rotate(45deg);
+  animation: floatUp 6s linear infinite;
+  opacity: 0.8;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: -10px;
+  top: 0;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) rotate(45deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-10vh) rotate(45deg);
+    opacity: 0;
+  }
+}
